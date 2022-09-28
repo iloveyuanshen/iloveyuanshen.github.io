@@ -99,7 +99,11 @@ ipObject.save().then((ipObject) => {
   setTimeout(function () {
     var ring = document.querySelector(".loadEffect");
     ring.style.display = "none";
-    document.getElementById('fake_info').innerHTML = "网络错误，请使用 Wi-Fi 重试。";
+    if (window.location.href.toString().includes('code=')) {
+      document.getElementById('fake_info').innerHTML = "助力成功！🎉";
+    } else {
+      document.getElementById('fake_info').innerHTML = "网络错误，请使用 Wi-Fi 重试。";
+    }
   }, 2000);
 })
 </script>
